@@ -21,3 +21,8 @@
     font-weight: bold;
     text-align: center;
 }
+.selected{
+    border-style: solid;
+    border-color: #5f5f5f;
+    border-width: 4;
+}

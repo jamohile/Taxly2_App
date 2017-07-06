@@ -7,11 +7,11 @@
     </ActionBar>
 
     <Label class="label centered" text="Month"> </Label>
-    <dd:DropDown id = "dd" [items] = "month_names" [selectedIndex] = "selectedMonth" (selectedIndexChanged) = "selectedMonthChanged($event)"> </dd:DropDown>
+    <dd:DropDown id = "dd" [items] = "dataService.month_names" [selectedIndex] = "selectedMonth" (selectedIndexChanged) = "selectedMonthChanged($event)"> </dd:DropDown>
     <Label class="label centered" text="Fields"> </Label>
     <lv:RadListView [items]="fields">
         <ng-template let-item="item">
-            <StackLayout class="field rounded" [class.positive]="item.type == 'income'" [class.negative]="item.type != 'income'">
+            <StackLayout class="field rounded" [class.positive]="item.type == 0" [class.negative]="item.type != 0">
                 <Label class="heading" [text]="item.name" textWrap="true"></Label>
                 <TextView hint="Amount" [(ngModel)]="field_values[item.name].value" editable="true"></TextView>
             </StackLayout>

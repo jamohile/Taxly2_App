@@ -20,6 +20,10 @@ refer to http://docs.nativescript.org/ui/theme.
 TextField.light{
     color: gray;
 }
+#dd{
+    margin: 8;
+    padding: 8;
+}
 Button{
     margin: 8;
 }

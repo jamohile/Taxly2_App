@@ -4,7 +4,7 @@ const enum fieldTypes{
 }
 export class FieldData{
     mandatory: boolean;
-    type: string;
+    type: number;
     name: string;
     total: number;
     constructor(){}

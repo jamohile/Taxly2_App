@@ -6,7 +6,7 @@
         <Label class="label centered" text="Totals"></Label>
         <lv:RadListView id="totals_container" [items]="fields">
             <ng-template let-item="item">
-                <StackLayout class="total rounded" [class.positive]="item.type == 'income'" [class.negative]="item.type != 'income'">
+                <StackLayout class="total rounded" [class.positive]="item.type == 0" [class.negative]="item.type != 0">
                     <Label class="item_name" [text]="item.name" textWrap="true"></Label>
                     <Label class="item_value" [text]="'$' + item.total" textWrap="true"></Label>
                 </StackLayout>
@@ -23,7 +23,7 @@
                         <Label class="label left" [text]="item.month" textWrap="true"></Label>
                         <lv:RadListView id="totals_container" [items]="item.fields">
                             <ng-template let-item="item">
-                                <StackLayout class="total rounded" [class.positive]="name_to_fields[item.name].type == 'income'" [class.negative]="name_to_fields[item.name].type != 'income'">
+                                <StackLayout class="total rounded" [class.positive]="name_to_fields[item.name].type == 0" [class.negative]="name_to_fields[item.name].type != 0">
                                     <Label class="item_name" [text]="item.name" textWrap="true"></Label>
                                     <Label class="item_value" [text]="'$' + item.value" textWrap="true"></Label>
                                 </StackLayout>

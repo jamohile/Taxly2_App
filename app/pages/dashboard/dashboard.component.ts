@@ -8,6 +8,7 @@ import { UserService } from '../../shared/user/user.service';
 import { DataService } from '../../shared/data/data.service';
 import { DataYear} from '../../shared/data/datayear/datayear';
 import { DataMonth } from "../../shared/data/datamonth/datamonth";
+import { Field } from "../../shared/field/field";
 import { FieldData } from "../../shared/field/field.data";
 
 @Component({
@@ -35,8 +36,14 @@ export class DashboardComponent implements OnInit{
            this.fields = new ObservableArray(dataYear.fields);
            this.months = new ObservableArray(dataYear.months);
            this.dataYear.fields.forEach((field:FieldData) => {
+               field.total = 0;
                this.name_to_fields[field.name] = field;
-           })
+           });
+           this.months.forEach((month:DataMonth) => {
+               month.fields.forEach((field:Field) => {
+                   this.name_to_fields[field.name].total =  +this.name_to_fields[field.name].total + +field.value;
+               })
+           });
        });
     }
     addMonth(){
