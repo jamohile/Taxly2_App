@@ -1,0 +1,11 @@
+<StackLayout class="med_margin">
+    <Image src="~/images_dev/cropped_logo.png"></Image>
+
+    <TextField hint="Name" [(ngModel)] = "user.name" [visibility]="isSigningUp ? 'visible' : 'hidden'" [class.visible] = "isSigningUp" ></TextField>
+    
+    <TextField #username class="med_margin light" hint="Username" [(ngModel)]="user.email"></TextField>
+    <TextField #password class="med_margin light" hint="Password" [(ngModel)]="user.password"></TextField>
+    
+    <Button class="dark" [text] = "isSigningUp ? 'Sign Up' : 'Sign In'" (tap)="submit()"></Button>
+    <Button class="light" [text] = "isSigningUp ? 'Cancel' : 'Sign Up'" (tap)="toggle()"></Button>
+</StackLayout>

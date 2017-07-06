@@ -1,0 +1,25 @@
+<ScrollView>
+<StackLayout xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui/listview">
+    <ActionBar title="Add Month" icon="" class="action_bar">
+        <ActionItem (tap)="save()">
+            <Button class="dark" text="Save Month"></Button>
+        </ActionItem>
+    </ActionBar>
+
+    <Label class="label centered" text="Month"> </Label>
+    <dd:DropDown id = "dd" [items] = "month_names" [selectedIndex] = "selectedMonth" (selectedIndexChanged) = "selectedMonthChanged($event)"> </dd:DropDown>
+    <Label class="label centered" text="Fields"> </Label>
+    <lv:RadListView [items]="fields">
+        <ng-template let-item="item">
+            <StackLayout class="field rounded" [class.positive]="item.type == 'income'" [class.negative]="item.type != 'income'">
+                <Label class="heading" [text]="item.name" textWrap="true"></Label>
+                <TextView hint="Amount" [(ngModel)]="field_values[item.name].value" editable="true"></TextView>
+            </StackLayout>
+        </ng-template>
+        <lv:ListViewLinearLayout tkListView scrollDirection="Vertical" itemInsertAnimation="Scale" itemDeleteAnimation="Default"
+        />
+    </lv:RadListView>
+    <Button class="dark" text="Add Field" (tap)="addField()"></Button>
+</StackLayout>
+
+</ScrollView>

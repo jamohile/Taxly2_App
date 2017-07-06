@@ -1,0 +1,19 @@
+
+#totals_container{
+    margin:8;
+}
+.total{
+    padding:8;
+    min-width: 112;
+    margin-right: 4;
+    color: white;
+}
+.item_name{
+    font-size: 16;
+    font-weight: bold;
+    text-align: center;
+}
+.item_value{
+    font-size: 24;
+    text-align: center;
+}

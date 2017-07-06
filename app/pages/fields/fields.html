@@ -1,0 +1,18 @@
+<StackLayout xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui/listview">
+    <ActionBar title="Fields" icon="" class="action_bar">
+    </ActionBar>
+    <!-- Container for all fields found in 'fields' variable -->
+    <Label class = "label left" text = "Fields"> </Label>
+    <lv:RadListView [items] = "fields">
+        <ng-template let-item = "item">
+            <StackLayout class = "field rounded" [id] = "item.name" (longPress) = "unlockForEditing($event)" [class.positive]="item.type == 'income'" [class.negative]="item.type != 'income'">
+                <Label class = "heading"[text] = "item.name"> </Label>
+                <StackLayout class = "field_data" [visibility] = "(fields_meta[item.name].editable == true) ? 'visible' : 'collapse'" [class.slide] = 'fields_meta[item.name].editable == true'>
+                    <TextView hint="Name" [(ngModel)] = "fields_meta[item.name].buffer.name" editable="true"></TextView>
+                    <Button class = "light" text = "Save Changes"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ng-template>
+    </lv:RadListView>
+    <Button class = "dark" text = "New Field" (tap) = "newField()"></Button>
+</StackLayout>

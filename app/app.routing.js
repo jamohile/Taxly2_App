@@ -1,0 +1,33 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("nativescript-angular/router");
+var login_component_1 = require("./pages/login/login.component");
+var dashboard_component_1 = require("./pages/dashboard/dashboard.component");
+var month_component_1 = require("./pages/month/month.component");
+var fields_component_1 = require("./pages/fields/fields.component");
+var routes = [
+    { path: "", component: login_component_1.LoginComponent },
+    { path: "dashboard", component: dashboard_component_1.DashboardComponent },
+    { path: "month/:month", component: month_component_1.MonthComponent },
+    { path: "fields/:month", component: fields_component_1.FieldComponent }
+];
+exports.navigatableComponents = [
+    login_component_1.LoginComponent,
+    dashboard_component_1.DashboardComponent,
+    month_component_1.MonthComponent,
+    fields_component_1.FieldComponent
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
+    }
+    return AppRoutingModule;
+}());
+AppRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.NativeScriptRouterModule.forRoot(routes)],
+        exports: [router_1.NativeScriptRouterModule]
+    })
+], AppRoutingModule);
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLnJvdXRpbmcuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJhcHAucm91dGluZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHNDQUF5QztBQUN6QyxzREFBdUU7QUFJdkUsaUVBQTZEO0FBQzdELDZFQUF5RTtBQUN6RSxpRUFBNkQ7QUFDN0Qsb0VBQStEO0FBRS9ELElBQU0sTUFBTSxHQUFXO0lBQ25CLEVBQUUsSUFBSSxFQUFFLEVBQUUsRUFBRSxTQUFTLEVBQUUsZ0NBQWMsRUFBRTtJQUN2QyxFQUFFLElBQUksRUFBRSxXQUFXLEVBQUUsU0FBUyxFQUFFLHdDQUFrQixFQUFDO0lBQ25ELEVBQUUsSUFBSSxFQUFFLGNBQWMsRUFBRSxTQUFTLEVBQUUsZ0NBQWMsRUFBQztJQUNsRCxFQUFFLElBQUksRUFBRSxlQUFlLEVBQUUsU0FBUyxFQUFFLGlDQUFjLEVBQUM7Q0FDdEQsQ0FBQztBQUNXLFFBQUEscUJBQXFCLEdBQUc7SUFDakMsZ0NBQWM7SUFDZCx3Q0FBa0I7SUFDbEIsZ0NBQWM7SUFDZCxpQ0FBYztDQUVqQixDQUFBO0FBTUQsSUFBYSxnQkFBZ0I7SUFBN0I7SUFBZ0MsQ0FBQztJQUFELHVCQUFDO0FBQUQsQ0FBQyxBQUFqQyxJQUFpQztBQUFwQixnQkFBZ0I7SUFKNUIsZUFBUSxDQUFDO1FBQ04sT0FBTyxFQUFFLENBQUMsaUNBQXdCLENBQUMsT0FBTyxDQUFDLE1BQU0sQ0FBQyxDQUFDO1FBQ25ELE9BQU8sRUFBRSxDQUFDLGlDQUF3QixDQUFDO0tBQ3RDLENBQUM7R0FDVyxnQkFBZ0IsQ0FBSTtBQUFwQiw0Q0FBZ0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSB9IGZyb20gXCJAYW5ndWxhci9jb3JlXCI7XG5pbXBvcnQgeyBOYXRpdmVTY3JpcHRSb3V0ZXJNb2R1bGUgfSBmcm9tIFwibmF0aXZlc2NyaXB0LWFuZ3VsYXIvcm91dGVyXCI7XG5pbXBvcnQgeyBSb3V0ZXMgfSBmcm9tIFwiQGFuZ3VsYXIvcm91dGVyXCI7XG5cblxuaW1wb3J0IHtMb2dpbkNvbXBvbmVudH0gZnJvbSBcIi4vcGFnZXMvbG9naW4vbG9naW4uY29tcG9uZW50XCI7XG5pbXBvcnQge0Rhc2hib2FyZENvbXBvbmVudH0gZnJvbSBcIi4vcGFnZXMvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnRcIjtcbmltcG9ydCB7TW9udGhDb21wb25lbnR9IGZyb20gXCIuL3BhZ2VzL21vbnRoL21vbnRoLmNvbXBvbmVudFwiO1xuaW1wb3J0IHtGaWVsZENvbXBvbmVudH0gZnJvbSBcIi4vcGFnZXMvZmllbGRzL2ZpZWxkcy5jb21wb25lbnRcIjtcblxuY29uc3Qgcm91dGVzOiBSb3V0ZXMgPSBbXG4gICAgeyBwYXRoOiBcIlwiLCBjb21wb25lbnQ6IExvZ2luQ29tcG9uZW50IH0sXG4gICAgeyBwYXRoOiBcImRhc2hib2FyZFwiLCBjb21wb25lbnQ6IERhc2hib2FyZENvbXBvbmVudH0sXG4gICAgeyBwYXRoOiBcIm1vbnRoLzptb250aFwiLCBjb21wb25lbnQ6IE1vbnRoQ29tcG9uZW50fSxcbiAgICB7IHBhdGg6IFwiZmllbGRzLzptb250aFwiLCBjb21wb25lbnQ6IEZpZWxkQ29tcG9uZW50fVxuXTtcbmV4cG9ydCBjb25zdCBuYXZpZ2F0YWJsZUNvbXBvbmVudHMgPSBbXG4gICAgTG9naW5Db21wb25lbnQsXG4gICAgRGFzaGJvYXJkQ29tcG9uZW50LFxuICAgIE1vbnRoQ29tcG9uZW50LFxuICAgIEZpZWxkQ29tcG9uZW50XG5cbl1cblxuQE5nTW9kdWxlKHtcbiAgICBpbXBvcnRzOiBbTmF0aXZlU2NyaXB0Um91dGVyTW9kdWxlLmZvclJvb3Qocm91dGVzKV0sXG4gICAgZXhwb3J0czogW05hdGl2ZVNjcmlwdFJvdXRlck1vZHVsZV1cbn0pXG5leHBvcnQgY2xhc3MgQXBwUm91dGluZ01vZHVsZSB7IH0iXX0=

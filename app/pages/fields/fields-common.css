@@ -1,0 +1,23 @@
+.field{
+    margin: 8;
+    margin-bottom:0;
+    padding:8;
+}
+.slide{
+    animation-name: slideDown;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes slideDown{
+    from{
+        transform: scaleY(0)
+    }
+    to{
+        transform: scaleY(1)
+    }
+}
+.heading{
+    font-size: 16;
+    font-weight: bold;
+    text-align: center;
+}

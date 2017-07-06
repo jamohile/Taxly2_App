@@ -1,0 +1,25 @@
+StackLayout{
+    margin-left: 30;
+    margin-right: 30;
+    margin-top: 30;
+    margin-bottom: 30
+}
+Image{
+    width: 108;
+    margin-bottom: 108
+}
+.visible{
+    animation-name: animateTextField;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+@keyframes animateTextField{
+    from{
+        opacity: 0;
+        transform: scaleY(0)
+    }
+    to{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
